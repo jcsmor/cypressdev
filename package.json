@@ -8,12 +8,13 @@
     "headTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
     "test8": "npm run test -- --record -- --key 43c21637-14e3-4405-8cf1-281be7f21971",
-    "test8Reporter": "npm run test -- --record -- --key 43c21637-14e3-4405-8cf1-281be7f21971 -- --reportermochawesome"
+    "test8Reporter": "npm run test -- --reporter mochawesome -- --record -- --key 43c21637-14e3-4405-8cf1-281be7f21971"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.6.6",
-    "cypress-iframe": "^1.0.1"
+    "cypress-iframe": "^1.0.1",
+    "mochawesome": "7.1.3"
   }
 }
