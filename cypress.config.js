@@ -7,8 +7,6 @@ module.exports = defineConfig({
   env: {
     url: "https://rahulshettyacademy.com",
   },
-  projectId: 'aqhntk',
-  
   retries: {
     runMode: 1,
 
