@@ -7,7 +7,8 @@
     "test": "npx cypress run --spec cypress/integration/examples/Test8Framework.js",
     "headTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
-    "test8": "npm run test -- --record -- --key 43c21637-14e3-4405-8cf1-281be7f21971"
+    "test8": "npm run test -- --record -- --key 43c21637-14e3-4405-8cf1-281be7f21971",
+    "test8Reporter": "npm run test -- --record -- --key 43c21637-14e3-4405-8cf1-281be7f21971 -- --reportermochawesome"
   },
   "author": "",
   "license": "ISC",
