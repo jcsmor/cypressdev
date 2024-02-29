@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --spec cypress/integration/examples/Test8Framework.js"
+    "test": "npx cypress run --spec cypress/integration/examples/Test8Framework.js",
+    "headTest": "npm run test --headed"
   },
   "author": "",
   "license": "ISC",
