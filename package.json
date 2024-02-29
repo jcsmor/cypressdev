@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --spec cypress/integration/examples/Test8Framework.js",
+    "test": "node_modules\\.bin\\cypress run",
     "headTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
-    "test8": "npm run test -- --record -- --key 43c21637-14e3-4405-8cf1-281be7f21971",
-    "test8Reporter": "npm run test -- --reporter mochawesome -- --record -- --key 43c21637-14e3-4405-8cf1-281be7f21971"
+    "test8": "npm run test -- --spec \"cypress/integration/examples/Test8Framework.js\" --record --key 43c21637-14e3-4405-8cf1-281be7f21971",
+    "test8Reporter": "npm run test -- --reporter mochawesome --record --key 43c21637-14e3-4405-8cf1-281be7f21971"
   },
   "author": "",
   "license": "ISC",
