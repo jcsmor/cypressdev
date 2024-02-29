@@ -67,8 +67,5 @@ describe('My Second Test Suite', function () {
       const actualText = element.text()
       expect(actualText.includes("Success")).to.be.true
     })
-
-
-
   })
 })
