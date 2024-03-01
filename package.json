@@ -10,6 +10,12 @@
     "test8": "npm run test -- --spec \"cypress/integration/examples/Test8Framework.js\" --record --key 43c21637-14e3-4405-8cf1-281be7f21971",
     "test8Reporter": "npm run test -- --reporter mochawesome --record --key 43c21637-14e3-4405-8cf1-281be7f21971"
   },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cucumberReports/results.json"
+    }
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -18,6 +24,7 @@
     "mocha": "^10.3.0",
     "mochawesome": "^7.1.3",
     "@badeball/cypress-cucumber-preprocessor": "latest",
-    "@cypress/browserify-preprocessor": "latest"
+    "@cypress/browserify-preprocessor": "latest",
+    "multiple-cucumber-html-reporter": "latest"
   }
 }
