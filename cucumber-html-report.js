@@ -6,12 +6,12 @@ report.generate({
 	metadata:{
         browser: {
             name: 'chrome',
-            version: '100'
+            version: '122'
         },
         device: 'Local test machine',
         platform: {
-            name: 'ubuntu',
-            version: '16.04'
+            name: 'win',
+            version: '10'
         }
     },
     customData: {
