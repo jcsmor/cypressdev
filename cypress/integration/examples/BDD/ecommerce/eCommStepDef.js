@@ -15,7 +15,7 @@ Given('I open ECommerce Page',()=>
 })
 
 // When I add items to Cart
-When('I add items to Cart', ()=>
+When('I add items to Cart', function()
 {
   homePage.getShopTab().click()
   this.data.productName.forEach(function(element) 
@@ -30,7 +30,7 @@ When('Validate the total prices',()=>
 {
     var sum=0
     cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
-        
+
        const amount=$el.text()
        var res= amount.split(" ")
        res= res[1].trim()
