@@ -30,10 +30,9 @@ When('Validate the total prices',()=>
 {
     var sum=0
     cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
-
-
-        const amount=$el.text()
-        var res= amount.split(" ")
+        
+       const amount=$el.text()
+       var res= amount.split(" ")
        res= res[1].trim()
        sum= Number(sum)+Number(res)
        
