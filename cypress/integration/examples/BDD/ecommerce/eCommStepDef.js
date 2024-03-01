@@ -1,9 +1,10 @@
 /// <reference types="Cypress" />
 import HomePage from '../../../../support/pageObjects/HomePage'
 import ProductPage from '../../../../support/pageObjects/ProductPage'
-import { Given,When,Then } from "cypress-cucumber-preprocessor/steps";
+import { Given,When,Then } from '@badeball/cypress-cucumber-preprocessor';
 //npx cypress run --spec cypress\integration\examples\BDD\*.feature --headed --browser chrome
 //npx cypress-tags run -e TAGS="@Smoke" --headed --browser chrome
+//npx cypress run --env TAGS="@Smoke" --headed --browser chrome
 // npx cypress run --spec cypress/integration/examples/BDD/*.feature --headed --browser chrome --env url="https://google.com"
 const homePage=new HomePage()
 const productPage=new ProductPage()
