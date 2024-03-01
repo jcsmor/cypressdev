@@ -14,6 +14,10 @@ module.exports = defineConfig({
   projectId: 'aqhntk',
 
   e2e: {
+    setupNodeEvents(on, config){
+      // implement node event listners here
+      
+    }
     specPattern: 'cypress/integration/examples/*.js'
 
   },
