@@ -23,6 +23,13 @@ it('My FirstTest case',function() {
     
     //     }) 
 
+    // cy.request('GET',': /Library/GetBook.php?ID=3389').then(function(response){
+    //         console.log(response)
+    
+    //         //expect(response.body).to.have.property("Msg","successfully added")
+    
+    //     }) 
+
     // cy.request('DELETE','http://216.10.245.166/Library/DeleteBook.php', {
     // "ID" : "a23h345122332"
     // }).then(function(response){
