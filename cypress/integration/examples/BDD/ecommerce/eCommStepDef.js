@@ -5,7 +5,7 @@ import { Given,When,Then } from '@badeball/cypress-cucumber-preprocessor';
 //npx cypress run --spec cypress\integration\examples\BDD\*.feature --headed --browser chrome
 //npx cypress-tags run -e TAGS="@Smoke" --headed --browser chrome
 //npx cypress run --env TAGS="@Smoke" --headed --browser chrome
-// npx cypress run --spec cypress/integration/examples/BDD/*.feature --headed --browser chrome --env url="https://google.com"
+//npx cypress run --spec cypress/integration/examples/BDD/*.feature --headed --browser chrome --env url="https://google.com"
 const homePage=new HomePage()
 const productPage=new ProductPage()
 let name
@@ -88,15 +88,3 @@ When('Validate the total prices',()=>
     {
         homePage.getShopTab().click()
     })
-
-
-
-
-
-   
-
-
-
-
-
-
