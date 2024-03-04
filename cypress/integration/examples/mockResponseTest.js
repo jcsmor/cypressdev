@@ -3,9 +3,6 @@
 describe('My First test Suit', function()
 {
 
-
-
-
     it('My first test case', function(){
 
         cy.visit('https://www.rahulshettyacademy.com/angularAppdemo/')
@@ -30,12 +27,5 @@ describe('My First test Suit', function()
         cy.wait('@bookretrievals')
         cy.get('app-library-dashboard>p').should('have.text', 'Oops only 1 Book available')
         
-        
-
-        
-        
-
     })
-
-
 })
