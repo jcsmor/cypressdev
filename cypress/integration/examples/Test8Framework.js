@@ -17,8 +17,8 @@ describe('My Second Test Suite', function () {
     const homePage = new HomePage()
     const productPage = new ProductPage()
     const checkoutPage = new CheckoutPage()
-    cy.visit(Cypress.env('url')+"/angularpractice/")
-   //cy.visit('https://www.rahulshettyacademy.com/angularpractice/')
+    cy.visit(Cypress.env('url') + "/angularpractice/")
+    //cy.visit('https://www.rahulshettyacademy.com/angularpractice/')
     homePage.getEditBox().type(this.data.name)
     homePage.getGender().select(this.data.gender)
     homePage.getTwoWayDataBinding().should('have.value', this.data.name)
@@ -33,7 +33,7 @@ describe('My Second Test Suite', function () {
     // this timeout will be aplied only on this spec
 
 
-    this.data.productName.forEach(function(element) {
+    this.data.productName.forEach(function (element) {
       console.log(element)
       cy.selectProduct(element)
     });
@@ -56,7 +56,7 @@ describe('My Second Test Suite', function () {
       var total = res[1].trim()
       expect(Number(total)).to.equal(sum)
 
-     })
+    })
     cy.contains('Checkout').click()
     cy.get('#country').type('India')
     cy.get('.suggestions > ul > li > a').click()
@@ -68,5 +68,5 @@ describe('My Second Test Suite', function () {
       expect(actualText.includes("Success")).to.be.true
     })
   })
-  
+
 })

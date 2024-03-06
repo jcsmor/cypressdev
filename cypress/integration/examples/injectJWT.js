@@ -8,41 +8,35 @@ let productName
 
 describe('JWT Session', () => {
 
-  it('is logged in through local storage', async() => {
+  it('is logged in through local storage', async () => {
 
 
 
-    cy.LoginAPI().then(function()
+    cy.LoginAPI().then(function () {
 
-    {
-
-        cy.visit("https://rahulshettyacademy.com/client",
+      cy.visit("https://rahulshettyacademy.com/client",
 
         {
 
-            onBeforeLoad :function(window)
+          onBeforeLoad: function (window) {
 
-            {
+            window.localStorage.setItem('token', Cypress.env('token'))
 
-                window.localStorage.setItem('token',Cypress.env('token'))
-
-            }
+          }
 
 
 
-        })       
+        })
 
 
 
     })
 
-    cy.get(".card-body b").eq(1).then(function(ele)
+    cy.get(".card-body b").eq(1).then(function (ele) {
 
-      {
+      productName = ele.text();
 
-      productName =  ele.text();
-
-      })
+    })
 
     cy.get(".card-body button:last-of-type").eq(1).click();
 
@@ -56,15 +50,13 @@ describe('JWT Session', () => {
 
 
 
-      if($e1.text()===" India")
+      if ($e1.text() === " India") {
 
-      {
-
-          cy.wrap($e1).click()
+        cy.wrap($e1).click()
 
       }
 
-  })
+    })
 
     cy.get(".action__submit").click();
 
@@ -72,25 +64,23 @@ describe('JWT Session', () => {
 
     cy.get(".order-summary button").click();
 
-   
 
-  cy.readFile(Cypress.config("fileServerFolder")+"/cypress/downloads/order-invoice_rahul.csv")
 
-  .then(async(text)=>
+    cy.readFile(Cypress.config("fileServerFolder") + "/cypress/downloads/order-invoice_rahul.csv")
 
-  {
+      .then(async (text) => {
 
-    const csv =  await neatCSV(text)
+        const csv = await neatCSV(text)
 
-    console.log(csv)
+        console.log(csv)
 
-    const actualProductCSV = csv[0]["Product Name"]
+        const actualProductCSV = csv[0]["Product Name"]
 
-    expect(productName).to.equal(actualProductCSV)
+        expect(productName).to.equal(actualProductCSV)
 
-  })
+      })
 
   })
 
-  })
+})
 
