@@ -25,6 +25,7 @@
     "mochawesome": "^7.1.3",
     "@badeball/cypress-cucumber-preprocessor": "latest",
     "@cypress/browserify-preprocessor": "latest",
-    "multiple-cucumber-html-reporter": "latest"
+    "multiple-cucumber-html-reporter": "latest",
+    "neat-csv": "latest"
   }
 }
