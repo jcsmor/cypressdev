@@ -176,15 +176,14 @@ class CsvParser extends Transform {
   }
 
   writeRow (cells) {
-    const headers = (this.headers === false) ? cells.map((value, index) => index) : this.headers
+    if (this.headers === false || cells.length > this.headers.length) {
+      this.headers = cells.map((value, index) => index)
+    }
 
     const row = cells.reduce((o, cell, index) => {
-      const header = headers[index]
-      if (header === null) return o // skip columns
-      if (header !== undefined) {
+      const header = this.headers[index]
+      if (header !== null) {
         o[header] = cell
-      } else {
-        o[`_${index}`] = cell
       }
       return o
     }, {})

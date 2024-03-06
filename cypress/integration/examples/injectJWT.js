@@ -2,7 +2,7 @@
 
 //const neatCSV = require('neat-csv')
 
-//import neatCSV from 'neat-csv';
+import neatCSV from 'neat-csv';
 
 let productName
 
@@ -18,7 +18,7 @@ describe('JWT Session', () => {
         })
     })
 
-    cy.get(".card-body b").eq(1).then(function (ele) {
+    cy.get(".card-body b").eq(0).then(function (ele) {
       productName = ele.text();
     })
 
@@ -30,39 +30,34 @@ describe('JWT Session', () => {
 
     cy.get("[placeholder*='Country']").type("port")
 
-    cy.get('.ta-results button').each(($e1, index, $list) => {
-
-
-
-      if ($e1.text() === " Portugal") {
-
-        cy.wrap($e1).click()
-
+    cy.get('.ta-results button').each(($el, index, $list) => {
+      if ($el.text() === " Portugal") {
+        cy.wrap($el).click()
       }
-
     })
 
     cy.get(".action__submit").click();
 
     cy.wait(2000)
 
-    cy.get(".order-summary button").click();
+    cy.get(".order-summary button").eq(0).click();
 
 
 
-    // cy.readFile(Cypress.config("fileServerFolder") + "/cypress/downloads/order-invoice_rahul.csv")
+    cy.readFile(Cypress.config("fileServerFolder") + "/cypress/downloads/order-invoice_anshika.csv")
 
-    //   .then(async (text) => {
 
-    //     const csv = await neatCSV(text)
+      .then(async (text) => {
 
-    //     console.log(csv)
+        const csv = await neatCSV(text)
 
-    //     const actualProductCSV = csv[0]["Product Name"]
+        console.log(csv)
 
-    //     expect(productName).to.equal(actualProductCSV)
+        const actualProductCSV = csv[0]["Product Name"]
 
-    //   })
+        expect(productName).to.equal(actualProductCSV)
+
+      })
 
   })
 
