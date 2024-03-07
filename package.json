@@ -26,6 +26,7 @@
     "@badeball/cypress-cucumber-preprocessor": "latest",
     "@cypress/browserify-preprocessor": "latest",
     "multiple-cucumber-html-reporter": "latest",
-    "neat-csv": "5.1.0"
+    "neat-csv": "5.1.0",
+    "cypress-sql-server": "^1.0.0"
   }
 }
