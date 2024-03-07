@@ -44,20 +44,17 @@ describe('JWT Session', () => {
 
 
 
-    cy.readFile(Cypress.config("fileServerFolder") + "/cypress/downloads/order-invoice_anshika.csv")
+    cy.readFile(Cypress.config("fileServerFolder") + "/cypress/downloads/order-invoice_anshika.csv").then(async (text) => {
 
+      const csv = await neatCSV(text)
 
-      .then(async (text) => {
+      console.log(csv)
 
-        const csv = await neatCSV(text)
+      const actualProductCSV = csv[0]["Product Name"]
 
-        console.log(csv)
+      expect(productName).to.equal(actualProductCSV)
 
-        const actualProductCSV = csv[0]["Product Name"]
-
-        expect(productName).to.equal(actualProductCSV)
-
-      })
+    })
 
   })
 
