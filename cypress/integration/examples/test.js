@@ -8,6 +8,7 @@ for (let i = 0; i < scores.length; i++) {
 //console.log(evenScores)
 //we can not redeclare variable with let, but possible with var, const is constant
 // var Global/functional level/ - let Global/Block level - independent inside block and var is not convert string to numb - parseInt()/toString()
+"my, tags are, in here".split(/[ ,]+/)
 
 let scores1 = [12, 13, 14, 16, 77]
 let sumValue = scores1.filter(score => score % 2 == 0)
@@ -19,10 +20,15 @@ let fruits = ['banana', 'mango', 'pomegrante', 'apple']
 fruits.sort() // -> string arrays are easily sorted using sort // fruits.reverse()
 
 function findMaxNumber(arr) { return Math.max(...arr); }
-console.log(findMaxNumber(scores1));
 
 let sumOfNumbers = (c, d) => c + d
-console.log(sumOfNumbers(4, 6))
+// get the number of occurences of a word or substring in a text
+let myText = "my day is a fun day day"; let count = 0; let val = myText.indexOf('day')
+while (val !== -1) {
+    count++;
+    val = myText.indexOf('day', val + 1)
+}
+console.log(count)
 
 function bblSort(arr) {
     for (var i = 0; i < arr.length; i++) {
