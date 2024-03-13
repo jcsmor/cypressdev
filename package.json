@@ -28,6 +28,7 @@
     "multiple-cucumber-html-reporter": "latest",
     "neat-csv": "5.1.0",
     "cypress-sql-server": "^1.0.0",
-    "convert-excel-to-json": "^1.7.0"
+    "convert-excel-to-json": "^1.7.0",
+    "exceljs": "^4.4.0"
   }
 }
