@@ -5,19 +5,37 @@ for (let i = 0; i < scores.length; i++) {
         evenScores.push(scores[i])
     }
 }
-
-console.log(evenScores)
+//console.log(evenScores)
 
 let scores1 = [12, 13, 14, 16]
 
 let sumValue = scores1.filter(score => score % 2 == 0)
     .map(score => score * 3)
-    .reduce((sum, val) => sum + val, 0)
+    .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
 
 console.log(sumValue)
 
 function findMaxNumber(arr) {
     return Math.max(arr);
+}
+
+function bblSort(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        // Last i elements are already in place  
+        for (var j = 0; j < (arr.length - i - 1); j++) {
+            // Checking if the item at present iteration 
+            // is greater than the next iteration
+            if (arr[j] > arr[j + 1]) {
+                // If the condition is true
+                // then swap them
+                var temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+            }
+        }
+    }
+    // Print the sorted array
+    console.log(arr);
 }
 
 function isPalindrome(str) {

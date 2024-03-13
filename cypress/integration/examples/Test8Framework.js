@@ -11,8 +11,6 @@ describe('My Second Test Suite', function () {
     })
   })
 
-
-
   it('My FirstTest case', function () {
     const homePage = new HomePage()
     const productPage = new ProductPage()
@@ -24,15 +22,10 @@ describe('My Second Test Suite', function () {
     homePage.getTwoWayDataBinding().should('have.value', this.data.name)
     homePage.getEditBox().should('have.attr', 'minlength', '2')
     homePage.getEntrepreneaur().should('be.disabled')
-
     // cy.pause() // -> to debug
-
     homePage.getShopTab().click()
-
     //Cypress.config('defaultCommandTimeout',8000) - in case we dont want to change the global value
     // this timeout will be aplied only on this spec
-
-
     this.data.productName.forEach(function (element) {
       console.log(element)
       cy.selectProduct(element)
