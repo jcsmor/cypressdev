@@ -17,10 +17,10 @@ describe('JWT Session', () => {
         })
 
     })
-    cy.get(".card-body b").eq(1).then(function (ele) {
+    cy.get(".card-body b").eq(0).then(function (ele) {
       productName = ele.text();
     })
-    cy.get(".card-body button:last-of-type").eq(1).click();
+    cy.get(".card-body button:last-of-type").eq(0).click();
     cy.get("[routerlink*='cart']").click();
     cy.contains("Checkout").click();
     cy.get("[placeholder*='Country']").type("ind")
@@ -35,14 +35,18 @@ describe('JWT Session', () => {
     cy.get(".order-summary button").contains("Excel").click();
     const filePath = Cypress.config("fileServerFolder") + "/cypress/downloads/order-invoice_anshika.xlsx"
     cy.task('excelToJsonConverter', filePath).then(function (result) {
+      cy.log(result)
       cy.log(result.data[1].A);
+      cy.log(result.data[1].B);
+      cy.log(productName);
       expect(productName).to.equal(result.data[1].B);
 
     })
 
-
+    // Use this simple aproach just to open file and confirm product name is present on text
+    //readfile is cypress native command
     cy.readFile(filePath).then(function (text) {
-      expect(text).to.include("dsaf");
+      expect(text).to.include(productName);
     })
 
 
