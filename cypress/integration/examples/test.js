@@ -28,12 +28,9 @@ function filterEvenNumbers(numbers) {
     return numbers.filter(num => num % 2 === 0);
 }
 
-function factorial(number) {
-    if (number === 0 || number === 1) {
-        return 1;
-    } else {
-        return number * factorial(number - 1);
-    }
+function factorial(num) {
+    if (num <= 1) return 1;
+    return num * factorial(num - 1);
 }
 
 function isPrime(num) {
@@ -70,8 +67,3 @@ function fibonacciSequence(numTerms) {
 function toTitleCase(str) {
     return str.replace(/\b\w/g, l => l.toUpperCase());
 }
-
-function factorial(num) {
-    if (num <= 1) return 1;
-    return num * factorial(num - 1);
-} 
