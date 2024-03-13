@@ -7,17 +7,22 @@ for (let i = 0; i < scores.length; i++) {
 }
 //console.log(evenScores)
 //we can not redeclare variable with let, but possible with var, const is constant
-let scores1 = [12, 13, 14, 16]
+// var Global/functional level/ - let Global/Block level - independent inside block and var is not convert string to numb - parseInt()/toString()
 
+let scores1 = [12, 13, 14, 16, 77]
 let sumValue = scores1.filter(score => score % 2 == 0)
     .map(score => score * 3)
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
-
 console.log(sumValue)
 
-function findMaxNumber(arr) {
-    return Math.max(arr);
-}
+let fruits = ['banana', 'mango', 'pomegrante', 'apple']
+fruits.sort() // -> string arrays are easily sorted using sort // fruits.reverse()
+
+function findMaxNumber(arr) { return Math.max(...arr); }
+console.log(findMaxNumber(scores1));
+
+let sumOfNumbers = (c, d) => c + d
+console.log(sumOfNumbers(4, 6))
 
 function bblSort(arr) {
     for (var i = 0; i < arr.length; i++) {
@@ -63,9 +68,9 @@ function toTitleCase(str) {
     return str.replace(/\b\w/g, l => l.toUpperCase());
 }
 
-//CREATE TABLE Persons (PersonID int,LastName varchar(255),City varchar(255));
-//DELETE FROM Persons WHERE PersonID=9535;
-//INSERT INTO Persons (PersonID, LastName, FirstName, City)
-//VALUES ('1133', 'Erichsen', 'Tom', 'Lisbon');
-//DROP TABLE Persons;
-//DELETE FROM Persons; -> deletes all records, but table remains
+// CREATE TABLE Persons (PersonID int,LastName varchar(255),City varchar(255));
+// DELETE FROM Persons WHERE PersonID=9535;
+// INSERT INTO Persons (PersonID, LastName, FirstName, City)
+// VALUES ('1133', 'Erichsen', 'Tom', 'Lisbon');
+// DROP TABLE Persons;
+// DELETE FROM Persons; -> deletes all records, but table remains

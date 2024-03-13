@@ -36,12 +36,10 @@ async function setupNodeEvents(on, config) {
       return result;
     }
   })
-
   return config;
 }
 
 module.exports = defineConfig({
-
   defaultCommandTimeout: 8000,
   reporter: 'mochawesome',
   env: {

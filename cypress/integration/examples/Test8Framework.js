@@ -33,7 +33,6 @@ describe('My Second Test Suite', function () {
     productPage.checkOutButton().click()
     var sum = 0
 
-
     checkoutPage.checkOutProductPrice().each(($el, index, $list) => {
       const amount = $el.text()
       var res = amount.split(" ")
@@ -48,7 +47,6 @@ describe('My Second Test Suite', function () {
       var res = amount.split(" ")
       var total = res[1].trim()
       expect(Number(total)).to.equal(sum)
-
     })
     cy.contains('Checkout').click()
     cy.get('#country').type('India')

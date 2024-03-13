@@ -13,9 +13,7 @@ describe('JWT Session', () => {
           onBeforeLoad: function (window) {
             window.localStorage.setItem('token', Cypress.env('token'))
           }
-
         })
-
     })
     cy.get(".card-body b").eq(0).then(function (ele) {
       productName = ele.text();

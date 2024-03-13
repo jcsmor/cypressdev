@@ -8,5 +8,4 @@ describe('My Second Test Suite', function () {
             cy.log(result[0][1])
         })
     })
-
 })
