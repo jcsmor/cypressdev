@@ -24,6 +24,3 @@ describe('My Iframe Test Suite', function () {
         cy.iframe().find("h1[class*='pricing-title']").should('have.length', 2)
     })
 })
-
-
-

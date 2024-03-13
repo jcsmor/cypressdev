@@ -18,12 +18,10 @@ describe('My First Test Suite', () => {
         $el.find('div.product-action button').click()
       }
     })
-
     //to print in log     
     cy.get('.brand').then(function (logoelement) {
       cy.log(logoelement.text())
     })
-
     // assert text
     cy.get('.brand').should('have.text', 'GREENKART')
     //cy.log(cy.get('.brand').text()) - does not work because text is not cypress method
