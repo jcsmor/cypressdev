@@ -6,7 +6,7 @@ for (let i = 0; i < scores.length; i++) {
     }
 }
 //console.log(evenScores)
-
+//we can not redeclare variable with let, but possible with var, const is constant
 let scores1 = [12, 13, 14, 16]
 
 let sumValue = scores1.filter(score => score % 2 == 0)
@@ -59,29 +59,13 @@ function isPrime(num) {
     return true;
 }
 
-function findLargestElement(nestedArray) {
-    let largest = nestedArray[0][0];
-    for (let arr of nestedArray) {
-        for (let num of arr) {
-            if (num > largest) {
-                largest = num;
-            }
-        }
-    }
-    return largest;
-}
-
-function fibonacciSequence(numTerms) {
-    if (numTerms <= 0) return [];
-    if (numTerms === 1) return [0];
-    let sequence = [0, 1];
-    while (sequence.length < numTerms) {
-        let nextNumber = sequence[sequence.length - 1] + sequence[sequence.length - 2];
-        sequence.push(nextNumber);
-    }
-    return sequence;
-}
-
 function toTitleCase(str) {
     return str.replace(/\b\w/g, l => l.toUpperCase());
 }
+
+//CREATE TABLE Persons (PersonID int,LastName varchar(255),City varchar(255));
+//DELETE FROM Persons WHERE PersonID=9535;
+//INSERT INTO Persons (PersonID, LastName, FirstName, City)
+//VALUES ('1133', 'Erichsen', 'Tom', 'Lisbon');
+//DROP TABLE Persons;
+//DELETE FROM Persons; -> deletes all records, but table remains
