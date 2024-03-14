@@ -9,7 +9,7 @@ describe('My First Test Suite', () => {
     //cy.get('.products .product').should('have.length', 4)  //tagName[attribute = value]
     // console.log() -> prints on dev tools log              // input[type='search']
     // we can use jquery to get only the visible products
-    // jquery--> cy.get('.product:visible').should('have.length', 4)
+    // jquery--> cy.get('.product:visible').should('have.length', 4) // get-find - parent child
     cy.get('.products').as('productLocator')
     cy.get('@productLocator').find('.product').should('have.length', 4)
     //cy.get('.products').find('.product').eq(2).find('div.product-action button').click()
