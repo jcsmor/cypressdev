@@ -23,4 +23,4 @@ async function readExcel(worksheet, searchText) {
     return output;
 }
 //update Mango Price to 350. 
-writeExcelTest("Mango", 350, { rowChange: 0, colChange: 2 }, "/Users/rahulshetty/downloads/excelTest.xlsx");
+writeExcelTest("Mango", 350, { rowChange: 0, colChange: 2 }, "cypress/downloads/excelTest.xlsx");
