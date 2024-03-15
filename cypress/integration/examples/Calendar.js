@@ -20,6 +20,7 @@ describe('Calendar test', () => {
         //Assertion
         cy.get(".react-date-picker__inputGroup__input").each(($el, index) => {
             // cy.wrap -> resolves promisse and returns exact webElement
+            // invoque method retrieves the value with 'val' is a jquery method
             cy.wrap($el).invoke('val').should('eq', expectedList[index]);
         })
     })
