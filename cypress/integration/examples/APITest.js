@@ -12,7 +12,6 @@ describe('My First Test Suite', function () {
         }).then(function (response) {
             console.log(response)
             expect(response.body).to.have.property("Msg", "successfully added")
-
         })
 
         // cy.request('GET',': /Library/GetBook.php?AuthorName=somename').then(function(response){

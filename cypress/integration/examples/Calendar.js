@@ -19,6 +19,7 @@ describe('Calendar test', () => {
 
         //Assertion
         cy.get(".react-date-picker__inputGroup__input").each(($el, index) => {
+            // cy.wrap -> resolves promisse and returns exact webElement
             cy.wrap($el).invoke('val').should('eq', expectedList[index]);
         })
     })
