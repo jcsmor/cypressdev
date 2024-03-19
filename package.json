@@ -7,7 +7,7 @@
     "test": "npx cypress run",
     "headTest": "npm run test -- --headed",
     "chromeTest": "npm run test -- --browser chrome",
-    "Dtest": "npm run test -- --headed --spec \"cypress/integration/examples/Test8Framework.js\" --record --key 43c21637-14e3-4405-8cf1-281be7f21971",
+    "Dtest": "npm run test -- --browser chrome --headed --spec \"cypress/integration/examples/Test8Framework.js\" --record --key 43c21637-14e3-4405-8cf1-281be7f21971",
     "test8Reporter": "npm run test -- --reporter mochawesome --record --key 43c21637-14e3-4405-8cf1-281be7f21971",
     "myTest": "npx cypress run --spec cypress/integration/examples/Test8Framework.js"
   },
