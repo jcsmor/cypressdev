@@ -3,7 +3,7 @@ import HomePage from '../../support/pageObjects/HomePage'
 import ProductPage from '../../support/pageObjects/ProductPage'
 import CheckoutPage from '../../support/pageObjects/CheckoutPage'
 import 'cypress-iframe'
-describe('My Second Test Suite', function () {
+describe('My Test Suite', function () {
 
   before(function () {
     // runs once before all tests in the block
@@ -61,24 +61,16 @@ describe('My Second Test Suite', function () {
     })
   })
 
-
-  describe('My Iframe Test Suite', function () {
-    it('My first case', function () {
-      cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
-      // Getting a value with prop method
-      cy.get('#opentab').then(function (el) {
-        const url = el.prop('href')
-        cy.log(url)
-        //cy.visit(url)
-      })
-    })
-
-    it('My Iframe case', function () {
-      cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
-      cy.frameLoaded('#courses-iframe')
-      cy.iframe().find("a[href*='mentorship']").eq(0).click()
-      cy.iframe().find("h1[class*='pricing-title']").should('have.length', 2)
-    })
+  it('My SecondTest case', function () {
+    //Check boxes
+    cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+    // Handle invisible elements, we can use jquery to force their visibility with invoke('show')
+    // or we can add force: true to click like this -> cy.contains('Top').click({force: true})
+    cy.get('div.mouse-hover-content').invoke('show') //jquery method show
+    cy.contains('Top').click()
+    cy.url().should('include', 'top')
   })
+
+
 
 })
