@@ -15,11 +15,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4 
 
-      - name: Download the build folder
-        uses: actions/download-artifact@v4
-        with:
-          name: build  
-
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
@@ -38,3 +33,8 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download the build folder
+        uses: actions/download-artifact@v4
+        with:
+          name: build  
