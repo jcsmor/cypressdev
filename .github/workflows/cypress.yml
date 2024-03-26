@@ -19,10 +19,11 @@ jobs:
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
         uses: cypress-io/github-action@v6
         with:
+          config: baseUrl=http://localhost:3000
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
-          start: npm run Dtest
-          wait-on: 'http://localhost:3000' # Waits for above
+          start: npm install wait-on & npm run Dtest
+          wait-on: 'npx wait-on --timeout 60000 http://localhost:3000' # Waits for above
           #wait-on: 'http://[::1]:3000' # Waits for ipv6 address
           wait-on-timeout: 120
           # Records to Cypress Cloud 
